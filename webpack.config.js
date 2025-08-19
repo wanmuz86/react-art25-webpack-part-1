@@ -24,13 +24,13 @@ module.exports = {
             {
                 // ts and tsx will be first resolved by typescript loader
                 test:/\.(ts|tsx)$/,
-                exclude:/node-modules/,
+                exclude:/node-modules/|/dist/|/public/,
                 use:'ts-loader'
             },
             {
                  // js and jsx will be  resolved by babel preset env and preset-react
                 test:/\.(js|jsx)$/,
-                exclude:/node-modules/,
+                exclude:/node-modules/|/dist/|/public/,
                 use: {
                     loader:'babel-loader',
                     options: {
