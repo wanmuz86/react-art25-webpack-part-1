@@ -19,18 +19,18 @@ module.exports = {
         extensions: ['.ts','.tsx','.js','.jsx']
     },
     // modules: and who resolve it?
-    modules: {
+    module: {
         rules: [
             {
                 // ts and tsx will be first resolved by typescript loader
                 test:/\.(ts|tsx)$/,
-                exclude:/node-modules/|/dist/|/public/,
+                exclude:/node-modules|dist|public/,
                 use:'ts-loader'
             },
             {
                  // js and jsx will be  resolved by babel preset env and preset-react
                 test:/\.(js|jsx)$/,
-                exclude:/node-modules/|/dist/|/public/,
+                exclude:/node-modules|dist|public/,
                 use: {
                     loader:'babel-loader',
                     options: {
@@ -50,7 +50,7 @@ module.exports = {
     devServer: {
         static: {
             // Read from these files
-            directory:path.resolve(__dirname, 'public'),images
+            directory:path.resolve(__dirname, 'public'),
         },
         historyApiFallback:true,
         port:3000,
