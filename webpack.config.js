@@ -37,7 +37,27 @@ module.exports = {
                         presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
+            },
+            {
+                test:/\.css$/,
+                use:['style-loader', 'css-loader'] // Process CSS files
+            },
+            {
+                test: /\.{png|jpg|gif|svg}$/,
+                use:[
+                {
+                    loader:'file-loader',
+                    // For production/build setup
+                    // File name will renamed
+                    // and put inside assets subfolder
+                    options:{
+                        name:'[name].[hash].[ext]',
+                        outputPath:'assets'
+                    }
+                }
+                ]
             }
+
         ]
     },
     plugins:[
