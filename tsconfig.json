@@ -1,0 +1,13 @@
+{
+   "compilerOptions": {
+     "target": "es5",
+     "module": "esnext",
+     "jsx": "react",
+     // strict checking on the typescript
+     "strict": true,
+     "esModuleInterop": true,
+     "skipLibCheck": true,
+     "forceConsistentCasingInFileNames": true
+   },
+   "include": ["src/**/*"]
+ }
